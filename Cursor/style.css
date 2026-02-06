@@ -141,3 +141,67 @@ body{
     font-weight: 400;
     color: rgb(237, 72, 25);
 }
+
+#feedback{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#feedback-h{
+    font-size: 26px;
+    font-weight: 400;
+}
+#parent-feedback{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
+    width: 1200px;
+    gap: 20px;
+    place-content: center;
+}
+.child-feedback{
+    background-color: rgb(26, 25, 21);
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 400px;
+    height: 230px;
+    padding: 15px;
+    border-radius: 1rem;
+}
+.child-feedback-1{
+    color: rgb(152, 149, 148);
+}
+.child-feedback-2 {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+}
+.child-feedback-2 img{
+    width: 40px;
+    height: 40px;
+    align-self:flex-end;
+    border-radius: 0.5rem;
+}
+.child-feedback-2-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+.child-feedback-2-1 h4{
+    margin-bottom: 0;
+
+}
+.child-feedback-2-1 p{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: rgb(152, 149, 148);
+}
