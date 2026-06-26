@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <style>
+        body{
+            color: aliceblue;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="Enter your task here" id="todoInput">
+        <button id="createButton">Create</button>
+    </div>
+    <div>
+        <ul id="todoContainer">
+        </ul>
+    </div>
+    <script>
+        const createButtonRef = document.getElementById("createButton");
+        const todoInputRef = document.getElementById("todoInput");
+        const todoContainerRef = document.getElementById("todoContainer");
+
+
+        (async()=>{
+            fetch('https://api.freeapi.app/api/v1/public/quotes',{
+                method :'GET',
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            for( const obj of data.data.data){
+                const li = document.createElement('li');
+                li.innerText = obj.content;
+                todoContainerRef.appendChild(li)
+            }
+        });
+
+        })();
+
+        createButtonRef.addEventListener('click', function(){
+            const value = todoInputRef.value;
+            const li = document.createElement('li');
+            li.innerText = value;
+            todoContainerRef.appendChild(li)
+            todoInputRef.value = '';
+       
+             li.addEventListener('click',function(){
+             li.remove();
+             })
+        } )
+   
+    </script>
+</body>
+</html>
